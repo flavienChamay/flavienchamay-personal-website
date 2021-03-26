@@ -28,5 +28,19 @@ class BlogTests(TestCase):
             """
             
             self.assertEqual(f'{self.post.title}', 'A good title')
-            self.assertEqual(f'{self.post.}')
+            self.assertEqual(f'{self.post.body}', 'Nice body content')
+
+        def test_post_list_view(self):
+            response = self.client.get(reverse('home'))
+            self.assertEqual(response.status_code, 200)
+            self.assertContains(response, 'Nice body content')
+            self.assertTemplateUsed(response, 'home.html')
+
+        def test_post_detail_view(self):
+            response = self.client.get('/post/1/')
+            no_response = self.client.get('/post/100000')
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(no_response.status_code, 200)
+            self.assertContains(response, 'A good title')
+            self.assertTemplateUsed(response, 'post_detail.html')
             
