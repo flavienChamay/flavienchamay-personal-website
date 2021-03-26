@@ -1,7 +1,8 @@
 """
 This module manages the views of the blog application.
 
-:class BlogListView: The class view that will be used for the class Post.
+:class BlogListView: The class view that will be used for the class Post in the home page.
+:class BlogDetailView: The class view that will be used for the class Post in the post_detail.html file.
 """
 
 from django.views.generic import ListView, DetailView
