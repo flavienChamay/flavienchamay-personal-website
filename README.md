@@ -2,7 +2,7 @@
 This project is the source code of my personal website that will soon be live.
 
 ## Table of contents
-* [General info](#general-info)
+* [General Info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
@@ -12,6 +12,7 @@ This project is the source code of my personal website that will soon be live.
 * [Status](#status)
 * [Inspiration and Sources](#inspiration-and-sources)
 * [Contact](#contact)
+* [Licence](#licence)
 
 ## General Info
 This project aims to be in production. It aims to contain blog posts with text, images, etc... pages containing my CV, my comments on various topics, my projects and more. Further personal improvements will be added in the future. I coded this website to learn how to use a framework in Python via books and online courses. I also built it to have an online presence on the web where I can build whatever I want and say whatever I want to say.
@@ -22,6 +23,7 @@ Coming soon...
 ## Technologies
 * Django - v3.1
 * Python - v3.9
+* HTML - v5
 * django-cryspy-forms - v1.11.2
 * whitenoise - v5.2.0
 * environs - v9.3.1
@@ -53,3 +55,6 @@ Project based on the books of [Willian S. Vincent](https://github.com/wsvincent)
 
 ## Contact
 Written by [Flavien Chamay](mailto:flavien.chamay@protonmail.com)
+
+## Licence
+Under the [GPL-3.0 License](https://github.com/flavienChamay/flavienchamay-personal-website/blob/main/LICENSE).
