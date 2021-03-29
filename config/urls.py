@@ -12,16 +12,17 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-"""
+
 This module links all the apps to the website.
 
 :var urlpatterns list: List of all URLS links for the website.
 """
+
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # Link to the URL of the site administration.
+    path('accounts/', include('django.contrib.auth.urls')), # Link to the URL for login.
     path('', include('blog.urls')), # Link to the URLS of the blog app.
 ]
