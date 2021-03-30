@@ -127,3 +127,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+
+# Login/signup settings
+# Redirection after login
+LOGIN_REDIRECT_URL = 'home'
+# Redirection after logout
+LOGOUT_REDIRECT_URL = 'home'

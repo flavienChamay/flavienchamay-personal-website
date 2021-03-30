@@ -22,7 +22,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls), # Link to the URL of the site administration.
-    path('accounts/', include('django.contrib.auth.urls')), # Link to the URL for login.
-    path('', include('blog.urls')), # Link to the URLS of the blog app.
+    # Link to the URL of the site administration.
+    path('admin/', admin.site.urls),
+    # Link to the URL for login.
+    path('accounts/', include('django.contrib.auth.urls')),
+    # Link to the URLS of the blog app.
+    path('', include('blog.urls')), 
 ]
