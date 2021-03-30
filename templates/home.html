@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
+{% block title %}Home{% endblock title %}
+ 
 {% block content %}
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+{% endif %}
 {% for post in object_list %}
 <div class="post-entry">
   <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
