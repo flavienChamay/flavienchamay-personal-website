@@ -25,5 +25,6 @@ urlpatterns = [
     path('post/<int:pk>/', BlogDetailView.as_view(), name='post_detail'),
     # Linking the blog page with the BlogListView view and the template blog_list.
     path('blog/', BlogListView.as_view(), name='blog_list'),
+    # Linking the home page with the HomePageView view and the template home.
     path('', HomePageView.as_view(), name='home'),
 ]
