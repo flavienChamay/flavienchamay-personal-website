@@ -8,7 +8,7 @@ This module manages the views of the blog application.
 :class BlogDeleteView: The class view that will be used for the class Post in the post_delete.html file.
 """
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import (
     CreateView,
     UpdateView,
@@ -18,6 +18,12 @@ from django.urls import reverse_lazy
 
 from .models import Post
 
+
+class HomePageView(TemplateView):
+    """
+    """
+    
+    template_name = 'home.html'
 
 
 class BlogListView(ListView):

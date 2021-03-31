@@ -28,6 +28,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     # Link to the URLS of the blog app.
     path('', include('blog.urls')),
-    # Link the URL of the pages app.
-    path('', include('pages.urls')),
 ]

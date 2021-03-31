@@ -11,6 +11,7 @@ from .views import (
     BlogCreateView,
     BlogUpdateView,
     BlogDeleteView,
+    HomePageView,
 )
 
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
     path('post/<int:pk>/', BlogDetailView.as_view(), name='post_detail'),
     # Linking the blog page with the BlogListView view and the template blog_list.
     path('blog/', BlogListView.as_view(), name='blog_list'),
+    path('', HomePageView.as_view(), name='home'),
 ]

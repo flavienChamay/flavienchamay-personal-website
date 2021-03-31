@@ -3,11 +3,12 @@
 {% block title %}Home{% endblock title %}
  
 {% block content %}
-{% for post in object_list %}
-<div class="post-entry">
-  <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-  <p>{{ post.date_publication }}</p>  
-  <p>{{ post.body }}</p>
+<br/>
+<div class="jumbotron">
+  <h1 class="display-4">Flavien Chamay's Personal Website</h1>
+  <p class="lead">Welcome to my personal website! I use this website to expose my projects, my resume, my projects and more. Please feel free to contact me if you have any questions or suggestions for improvement.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'blog_list' %}" role="button">View my Blog</a>
+  </p>
 </div>
-{% endfor %}
 {% endblock content %}
