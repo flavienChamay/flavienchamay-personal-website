@@ -19,6 +19,7 @@ from django.urls import reverse_lazy
 from .models import Post
 
 
+
 class BlogListView(ListView):
     """
     Class view that links the Post class to the home.html file.
@@ -28,7 +29,7 @@ class BlogListView(ListView):
     """
 
     model = Post
-    template_name = 'home.html'
+    template_name = 'blog_list.html'
 
 
 class BlogDetailView(DetailView):
