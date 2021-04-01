@@ -6,6 +6,7 @@ This module manages the views of the blog application.
 :class BlogCreateView: The class view that will be used for the class Post in the post_new.html file.
 :class BlogUpdateView: The class view that will be used for the class Post in the post_edit.html file.
 :class BlogDeleteView: The class view that will be used for the class Post in the post_delete.html file.
+:class HomePageView: The class view that will be used for the home page.
 """
 
 from django.views.generic import ListView, DetailView, TemplateView
@@ -15,12 +16,15 @@ from django.views.generic.edit import (
     DeleteView,
 )
 from django.urls import reverse_lazy
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
 
 
 class HomePageView(TemplateView):
     """
+    Class view linked to home.html file.
+
+    :var template_name str: The template used for this view.
     """
     
     template_name = 'home.html'
@@ -50,7 +54,7 @@ class BlogDetailView(DetailView):
     template_name = 'post_detail.html'
 
 
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     """
     Class view that links the Post class to the post_new.html template file.
 
@@ -61,10 +65,10 @@ class BlogCreateView(CreateView):
 
     model = Post
     template_name = 'post_new.html'
-    fields = ['title', 'body']
+    fields = ['title', 'author', 'body']
 
 
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
     """
     Class view that links the Post class to the post_edit.html template file.
 
@@ -75,9 +79,9 @@ class BlogUpdateView(UpdateView):
     
     model = Post
     template_name = 'post_edit.html'
-    fields = ['title', 'body']
+    fields = ['title', 'author', 'body']
 
-class BlogDeleteView(DeleteView):
+class BlogDeleteView(LoginRequiredMixin, DeleteView):
     """
     Class view that links the Post class to the post_delete.html template file.
 

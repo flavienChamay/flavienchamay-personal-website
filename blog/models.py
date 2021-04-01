@@ -1,5 +1,8 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth import get_user_model
+from django.conf import settings
+
 
 class Post(models.Model):
     """
@@ -10,9 +13,11 @@ class Post(models.Model):
     :var title CharField: The title of the post, with a maximum length of 200 characters.
     :var date_publication DateTimeField: Date and time of publication of the post.
     :var body TextField: The body of the post containing text.
+    :var author str: The author of the post, by default is Flavien Chamay.
     """
     
     title = models.CharField(max_length=200)
+    author = models.CharField(default='Flavien Chamay', max_length=200, editable=True)
     date_publication = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
 
