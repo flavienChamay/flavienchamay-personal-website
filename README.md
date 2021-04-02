@@ -27,6 +27,7 @@ Coming soon...
 * django-cryspy-forms - v1.11.2
 * whitenoise - v5.2.0
 * environs - v9.3.1
+* gunicorn
 * bootstrap
 
 ## Setup
@@ -37,13 +38,25 @@ Coming soon...
 
 ## Features
 * Add a post
+* Nice looking header
 
 To-do list:
-* Nice looking header, footer
+* Nice looking footer
 * Tag mechanism for each post
 * Resume (CV)/About page
 
 ## Launch
+
+### On Linux:
+After installing all dependencies, go to a terminal window, go to the root folder of the project and type:
+```bash
+python manage.py runserver
+```
+A message should show up with the address of the website which is by default:
+```
+http://127.0.0.1:8000/
+```
+Go to your web browser and type the address and press enter. Congratulations my website is live locally on your machine!
 
 ## Example of Use
 

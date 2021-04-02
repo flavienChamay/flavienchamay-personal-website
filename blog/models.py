@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.conf import settings
-
+from django.utils import timezone
 
 class Post(models.Model):
     """
@@ -18,7 +18,7 @@ class Post(models.Model):
     
     title = models.CharField(max_length=200)
     author = models.CharField(default='Flavien Chamay', max_length=200, editable=True)
-    date_publication = models.DateTimeField(auto_now_add=True)
+    date_publication = models.DateTimeField(default=timezone.now)
     body = models.TextField()
 
     def __str__(self):

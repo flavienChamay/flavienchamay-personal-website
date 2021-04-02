@@ -135,9 +135,7 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 # File storage engine used by collectstatic.
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Login/signup settings
-# Redirection after login
-LOGIN_REDIRECT_URL = 'home'
+# Logout settings
 # Redirection after logout
 LOGOUT_REDIRECT_URL = 'home'
 
