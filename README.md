@@ -64,7 +64,7 @@ Go to your web browser and type the address and press enter. Congratulations my 
 This project is _in progress_ because it is not yet deployed and there are a ton of things missing for proper use.
 
 ## Inspiration and Sources
-Project based on the books of [Willian S. Vincent](https://github.com/wsvincent) and the work of [Corey Schafer](https://github.com/CoreyMSchafer)
+Project based on the books of [Willian S. Vincent](https://github.com/wsvincent) and the Youtube videos of [Corey Schafer](https://github.com/CoreyMSchafer).
 
 ## Contact
 Written by [Flavien Chamay](mailto:flavien.chamay@protonmail.com)
