@@ -14,6 +14,7 @@ class Post(models.Model):
     :var date_publication DateTimeField: Date and time of publication of the post.
     :var body TextField: The body of the post containing text.
     :var author str: The author of the post, by default is Flavien Chamay.
+    :var date_publication DateTimeField: The date of publication or of modification of the post.
     """
     
     title = models.CharField(max_length=200)
