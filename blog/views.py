@@ -36,11 +36,14 @@ class BlogListView(ListView):
 
     :var model Post: The model of the ListView.
     :var template_name str: The template used for this view.
+    :var ordering list: Order the posts from newest to oldest.
+    :var paginate_by int: The number of posts for each page.
     """
 
     model = Post
     template_name = 'blog_list.html'
-
+    ordering = ['-date_publication']
+    paginate_by = 10
 
 class BlogDetailView(DetailView):
     """
