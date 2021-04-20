@@ -33,6 +33,12 @@ Coming soon...
 ## Setup
 
 ### On Linux:
+For the website to properly work you must create a .env file in the root of the project. Add this in this file:
+```
+export DEBUG = True
+export SECRET_KEY = 'WhateverSecretKeyYouWant'
+export DATABASE_URL=sqlite:///db.sqlite3
+```
 
 ### On Windows:
 
