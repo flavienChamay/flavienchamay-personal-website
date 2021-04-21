@@ -5,7 +5,7 @@ This module manages the forms for the creation and updates of accounts on the we
 :class: CustomUserChangeForm(UserChangeForm)
 """
 
-from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 
@@ -25,7 +25,7 @@ class CustomUserCreationForm(UserCreationForm):
         :var fields ??: The fields to adopt for the form.
         """
 
-        model = CustomUser
+        model = get_user_model()
         fields = UserCreationForm.Meta.fields
 
 
@@ -44,5 +44,5 @@ class CustomUserChangeForm(UserChangeForm):
         :var fields ??: The fields to adopt for the form.
         """
 
-        model = CustomUser
+        model = get_user_model()
         fields = UserChangeForm.Meta.fields
