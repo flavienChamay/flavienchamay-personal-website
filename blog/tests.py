@@ -103,48 +103,5 @@ class BlogTests(TestCase):
 
         :returns: None
         """
-        
+
         self.assertEqual(self.post.get_absolute_url(), '/post/1/')
-
-    def test_post_create_view(self):
-        """
-        This function tests the creation of a new view for a post, it ensures that the title and body is properly created.
-
-        :response request.Response: The response filled with a body and a title.
-        :returns: None.
-        """
-        
-        response = self.client.post(reverse('post_new'), {
-            'title': 'New title',
-            'body': 'New text',
-        })
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(Post.objects.last().title, 'New title')
-        self.assertEqual(Post.objects.last().body, 'New text')
-
-    def test_post_update_view(self):
-        """
-        This function tests the updating of a view for the first post and updates its body and  title and tests if it returns a proper status code (302 for a redirection).
-
-        :var response request.Response: The response updated with a new body and title.
-        :returns: None.
-        """
-        
-        response = self.client.post(reverse('post_edit', args='1'), {
-            'title': 'Updated title',
-            'body': 'Updated text',
-        })
-        self.assertEqual(response.status_code, 302)
-
-    def test_post_delete_view(self):
-        """
-        This function tests the deletion of a view for the first post and if it returns a proper status code (302 is a redirection since the item no longer exists).
-
-        :var response request.Response: The response that delete the first post.
-        :returns: None.
-        """
-        
-        response = self.client.post(
-            reverse('post_delete', args='1')
-        )
-        self.assertEqual(response.status_code, 302)

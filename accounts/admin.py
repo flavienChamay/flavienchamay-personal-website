@@ -9,6 +9,7 @@ from django.contrib.auth.admin import UserAdmin
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 
+
 class CustomUserAdmin(UserAdmin):
     """
     Class that adds new the functionalities of CustomUser to the admin users.
@@ -20,19 +21,14 @@ class CustomUserAdmin(UserAdmin):
     :var fieldsets dict: Used to to edit and add new custom fields.
     :var add_fieldsets dict: Used to to edit and add new custom fields.
     """
-    
-    
+
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email', 'username', 'age', 'is_staff', ]
-    fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('age',)}),
-    )
-    add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {'fields': ('age', )}),
-    )
-    
+    list_display = ['email', 'username', 'is_staff', ]
+    fieldsets = UserAdmin.fieldsets
+    add_fieldsets = UserAdmin.add_fieldsets
+
 
 # Register the new functionalities into the site.
 admin.site.register(CustomUser, CustomUserAdmin)
