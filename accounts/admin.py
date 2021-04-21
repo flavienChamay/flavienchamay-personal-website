@@ -2,12 +2,15 @@
 This module extends the existing UserAdmin class to use our new CustomUser model.
 
 :class: CustomUserAdmin(UserAdmin)
+:var CustomUser: The custom user model of the current user.
 """
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth import get_user_model
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser
+
+CustomUser = get_user_model()
 
 
 class CustomUserAdmin(UserAdmin):
@@ -25,7 +28,7 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email', 'username', 'is_staff', ]
+    list_display = ['email', 'username']
     fieldsets = UserAdmin.fieldsets
     add_fieldsets = UserAdmin.add_fieldsets
 

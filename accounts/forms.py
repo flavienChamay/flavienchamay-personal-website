@@ -21,7 +21,7 @@ class CustomUserCreationForm(UserCreationForm):
         """
         This class overridesthe default fields of the users.
 
-        :var model CustomUser: The model to adopt.
+        :var model CustomUser: The model to adopt, , we get the current model of the user.
         :var fields ??: The fields to adopt for the form.
         """
 
@@ -40,7 +40,7 @@ class CustomUserChangeForm(UserChangeForm):
         """
         This class overrides the default fields for the users.
 
-        :var model CustomUser: The model to adopt.
+        :var model CustomUser: The model to adopt, we get the current model of the user.
         :var fields ??: The fields to adopt for the form.
         """
 
