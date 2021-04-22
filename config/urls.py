@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Link to the URL for login.
     path('accounts/', include('django.contrib.auth.urls')),
+    # Link to the URLS of the pages app (to the home page more precisely).
+    path('', include('pages.urls')),
     # Link to the URLS of the blog app.
-    path('', include('blog.urls')),
+    path('blog/', include('blog.urls')),
 ]
