@@ -46,4 +46,4 @@ class Post(models.Model):
         :returns URL: The canonical URL designating the post object.
         """
 
-        return reverse('post_detail', args=[str(self.id)])
+        return reverse('blog_detail', args=[str(self.id)])

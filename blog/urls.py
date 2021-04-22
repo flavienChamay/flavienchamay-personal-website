@@ -12,7 +12,7 @@ from .views import (
 
 urlpatterns = [
     # Linking a blog post with the BlogDetailView view and the template post_detail.
-    path('post/<uuid:pk>/', BlogDetailView.as_view(), name='post_detail'),
+    path('<uuid:pk>', BlogDetailView.as_view(), name='blog_detail'),
     # Linking the blog page with the BlogListView view and the template blog_list.
     path('', BlogListView.as_view(), name='blog_list'),
 ]

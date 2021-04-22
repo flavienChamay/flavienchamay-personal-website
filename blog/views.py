@@ -39,4 +39,4 @@ class BlogDetailView(DetailView):
     """
 
     model = Post
-    template_name = 'post_detail.html'
+    template_name = 'blog_detail.html'
