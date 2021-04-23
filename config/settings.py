@@ -87,6 +87,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
+        # Try .postgresql_psycopg2 if errors
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': env.str("DJANGO_DATABASE_NAME"),
         'USER': env.str("DJANGO_DATABASE_USER"),
