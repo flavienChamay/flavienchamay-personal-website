@@ -1,8 +1,8 @@
 """
 This module manages the tests of the pages app.
 
-:class HomepageTests: Class that 
-:class AboutpageTests:
+:class HomepageTests: Class that will be used for testing the home page.
+:class AboutpageTests: Class that will be used for testing the about page.
 """
 
 from django.test import SimpleTestCase
@@ -11,7 +11,22 @@ from .views import HomePageView, AboutPageView
 
 
 class HomepageTests(SimpleTestCase):
+    """
+    This class inherits from SimpleTestCase for testing the home page.
+
+    :method: setUp(self):
+    :method: test_homepage_status_code(self)
+    :method: test_homepage_template(self)
+    :method: test_homepage_contains_correct_html(self)
+    :method: test_homepage_does_not_contains_incorrect_html(self)
+    :method: test_homepage_url_resolves_homepagesview(self)
+    """
+
     def setUp(self):
+        """
+        This function sets fills the variables of the 
+        """
+
         url = reverse('home')
         self.response = self.client.get(url)
 
