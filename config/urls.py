@@ -20,10 +20,15 @@ This module links all the apps to the website.
 
 from django.contrib import admin
 from django.urls import path, include
+from environs import Env
+
+# Environment Variables
+env = Env()
+env.read_env()
 
 urlpatterns = [
     # Link to the URL of the site administration.
-    path('admin/', admin.site.urls),
+    path(env.str("DJANGO_ADMIN_URL_HARDENING"), admin.site.urls),
     # Link to the URL for login.
     path('accounts/', include('django.contrib.auth.urls')),
     # Link to the URLS of the pages app (to the home page more precisely).
