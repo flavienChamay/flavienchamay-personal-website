@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import socket
+
 from pathlib import Path
 from environs import Env  # Importing environs package for environment variables
 
@@ -45,9 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party apps
     'crispy_forms',
+    'debug_toolbar',
     # Local apps
     'blog',
     'accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -164,3 +169,10 @@ SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
 # Secure Cookies
 SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=True)
 CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
+
+# Django Debug Toolbar
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+
+# To solve error "accounts.CustomUser: (models.W042)":
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

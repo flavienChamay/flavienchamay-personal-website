@@ -45,3 +45,9 @@ header h1 a {
 .post-entry h2 a:hover {
     color: red;
 }
+
+.footer-positionning{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

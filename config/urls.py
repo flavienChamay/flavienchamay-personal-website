@@ -18,6 +18,7 @@ This module links all the apps to the website.
 :var urlpatterns list: List of all URLS links for the website.
 """
 
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from environs import Env
@@ -36,3 +37,10 @@ urlpatterns = [
     # Link to the URLS of the blog app.
     path('blog/', include('blog.urls')),
 ]
+
+# Trigger django debug toolbar if DEBUG is true
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
