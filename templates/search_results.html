@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Tools{% block title %}
+
+{% block content %}
+<h1>Search Results</h1>
+{% for post in blog_list %}
+<div>
+  <h3><a href="">{{}}</a></h3>
+</div>
+{% endblock content %}

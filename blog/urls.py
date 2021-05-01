@@ -8,6 +8,7 @@ from django.urls import path
 from .views import (
     BlogListView,
     BlogDetailView,
+    SearchResultsListView
 )
 
 urlpatterns = [
@@ -15,4 +16,6 @@ urlpatterns = [
     path('<uuid:pk>', BlogDetailView.as_view(), name='blog_detail'),
     # Linking the blog page with the BlogListView view and the template blog_list.
     path('', BlogListView.as_view(), name='blog_list'),
+    # Linking the search function with the blog app.
+    path('search/', SearchResultsListView.as_view(), name='search_results'),
 ]

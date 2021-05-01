@@ -40,3 +40,17 @@ class BlogDetailView(DetailView):
 
     model = Post
     template_name = 'blog_detail.html'
+
+
+class SearchResultsListView(ListView):
+    """
+    Class view that links the Post class to the 
+
+    :var model Post: The model of the ListView.
+    :var context_object_name str: The name of the object.
+    :var template_name str: The template used for this view.
+    """
+
+    model = Post
+    context_object_name = 'blog_list'
+    template_name = 'search_results.html'
