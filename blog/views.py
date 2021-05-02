@@ -12,6 +12,7 @@ This module manages the views of the blog application.
 from django.views.generic import ListView, DetailView
 from django.urls import reverse_lazy
 from .models import Post
+from django.db.models import Q
 
 
 class BlogListView(ListView):
@@ -54,3 +55,9 @@ class SearchResultsListView(ListView):
     model = Post
     context_object_name = 'blog_list'
     template_name = 'search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return Post.objects.filter(
+            Q(title__icontains=query)
+        )
