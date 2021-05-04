@@ -9,4 +9,8 @@
   <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
 </div>
 {% endfor %}
+<hr>
+<p>
+  <a href="{% url 'search_bar' %}" class="btn btn-info">Go back</a>
+</p>
 {% endblock content %}
