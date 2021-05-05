@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'crispy_forms',
     'debug_toolbar',
+    'taggit',
     # Local apps
     'blog',
     'accounts',

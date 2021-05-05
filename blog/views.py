@@ -36,7 +36,7 @@ class BlogDetailView(DetailView):
     Class view that links the Post class to the post_detail.html template file.
 
     :var model Post: The model of the DetailView.
-    :var template_name str: The template used for this view.
+    :var template_name str: The template used for this view.sh
     """
 
     model = Post
